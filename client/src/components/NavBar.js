@@ -1,60 +1,64 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import M from "materialize-css/dist/js/materialize.min.js";
 
 const NavBar = () => {
+  useEffect(() => {
+    // Update the document title using the browser API
+
+    let sidenav = document.querySelector("#mobile-nav");
+    M.Sidenav.init(sidenav, {});
+  });
+
   return (
     <div>
-      <nav
-        className="navbar navbar-expand-lg navbar-light "
-        style={{ backgroundColor: "#e3f2fd" }}
-      >
-        <div className="container-fluid">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">
-                  Home
-                </Link>
-              </li>
+      <nav className="red">
+        <div className="nav-wrapper">
+          <a href="/" className="brand-logo">
+            Web Zone
+          </a>
 
-              <li className="nav-item">
-                <Link className="nav-link" to="/about">
-                  About
-                </Link>
-              </li>
+          <a href="/" className="sidenav-trigger" data-target="mobile-nav">
+            <i className="material-icons">menu</i>
+          </a>
 
-              <li className="nav-item">
-                <Link className="nav-link" to="/contact">
-                  Contact
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  Login
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/register">
-                  Register
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <ul className="right hide-on-med-and-down ">
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/contact">Contact</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/register">Register</Link>
+            </li>
+          </ul>
         </div>
       </nav>
+
+      <ul className="sidenav" id="mobile-nav">
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+        <li>
+          <Link to="/register">Register</Link>
+        </li>
+      </ul>
     </div>
   );
 };

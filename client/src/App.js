@@ -7,11 +7,14 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
 
+
 function App() {
   return (
     <>
       <div>
-        <NavBar />
+     
+<NavBar/>
+        
 
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -21,6 +24,8 @@ function App() {
           <Route exact path="/register" element={<Register />} />
         </Routes>
       </div>
+
+    
     </>
   );
 }
