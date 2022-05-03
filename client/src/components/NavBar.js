@@ -4,8 +4,7 @@ import M from "materialize-css/dist/js/materialize.min.js";
 
 const NavBar = () => {
   useEffect(() => {
-    // Update the document title using the browser API
-
+  
     let sidenav = document.querySelector("#mobile-nav");
     M.Sidenav.init(sidenav, {});
   });
