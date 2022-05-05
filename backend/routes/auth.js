@@ -3,10 +3,12 @@ const express = require('express');
 const router=express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const authenticate=require("../middleware/authenticate");
 
 
 require('../database/connect');
 const User = require('../model/userSchema');
+ //const Authenticate = require('../middleware/authenticate');
 
 
 
@@ -162,6 +164,18 @@ router.post('/signin',async(req,res)=>{
         console.log(err);
     }
 })
+
+
+
+
+
+
+router.get('/about',authenticate,(req,res)=>{
+  
+    res.send(req.rootUser);
+});
+
+
 
 
 

@@ -8,7 +8,7 @@ const dotenv=require('dotenv');
 dotenv.config({path:'./config.env'}); // add config file location
 require('../backend/database/connect'); // add database folder path  for simplicity just for reuse code
 
-
+ 
 
 
 const User = require('../backend/model/userSchema');  // add user schema file path after database conneection

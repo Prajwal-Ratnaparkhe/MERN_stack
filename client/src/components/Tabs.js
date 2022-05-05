@@ -3,6 +3,7 @@ import React from "react";
 const Tabs = () => {
   return (
     <div>
+      <center>
       <input id="tab1" type="radio" name="tabs" checked />
       <label for="tab1" style={{ margin: "0 0 -1px", padding: "15px 25px" }}>
         About
@@ -73,6 +74,7 @@ const Tabs = () => {
         </p>
         <hr />
       </section>
+      </center>
     </div>
   );
 };
